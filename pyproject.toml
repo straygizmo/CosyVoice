@@ -1,0 +1,68 @@
+[project]
+name = "cosyvoice"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "straygizmo", email = "straygizmo@gmail.com" }
+]
+dependencies = [
+    "HyperPyYAML",
+    "WeTextProcessing",
+    "conformer",
+    "deepspeed; sys_platform == 'linux'",
+    "diffusers",
+    "fastapi",
+    "fastapi-cli",
+    "gdown",
+    "gradio",
+    "grpcio",
+    "grpcio-tools",
+    "huggingface-hub",
+    "hydra-core",
+    "inflect",
+    "librosa",
+    "lightning",
+    "matplotlib",
+    "modelscope>=1.21.0",
+    "networkx",
+    "omegaconf",
+    "onnx",
+    "onnxruntime; sys_platform == 'darwin' or sys_platform == 'windows'",
+    "onnxruntime-gpu; sys_platform == 'linux'",
+    "openai-whisper",
+    "protobuf",
+    "pydantic",
+    "rich",
+    "soundfile",
+    "tensorboard",
+    "tensorrt-cu12",
+    "tensorrt-cu12-bindings",
+    "tensorrt-cu12-libs",
+    "torch==2.4.0+cu124",
+    "torchaudio==2.4.0+cu124",
+    "transformers",
+    "uvicorn",
+    "wget",
+    "pyarrow>=18.1.0",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["cosyvoice"]
+
+[[tool.rye.sources]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu124"
+type = "index"
